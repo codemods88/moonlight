@@ -1,0 +1,223 @@
+{
+  "expo": {
+    "name": "Moonlight",
+    "slug": "moonlight",
+    "owner": "inbox-zero",
+    "scheme": "moonlight",
+    "version": "1.0.20",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#FCFCFC",
+          "dark": {
+            "backgroundColor": "#141414"
+          }
+        }
+      ],
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-audio",
+        {
+          "enableBackgroundPlayback": false,
+          "microphonePermission": "Moonlight uses the microphone for voice calls with your bots."
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "speechRecognitionPermission": "Moonlight turns your speech into messages during voice calls.",
+          "microphonePermission": "Moonlight uses the microphone for voice calls with your bots."
+        }
+      ],
+      "expo-localization",
+      [
+        "expo-media-library",
+        {
+          "savePhotosPermission": "Moonlight saves photos and videos you download from Artifacts to your photo library.",
+          "granularPermissions": []
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Allow Moonlight to read and add events in calendars you choose for your bots.",
+          "remindersPermission": "Allow Moonlight to create and complete reminders in lists you choose for your bots."
+        }
+      ],
+      "@react-native-vector-icons/ionicons",
+      "@react-native-vector-icons/material-design-icons",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Moonlight uses your photo library so you can attach images to a bot message.",
+          "cameraPermission": "Moonlight uses the camera so you can attach photos to a bot message.",
+          "microphonePermission": "Moonlight uses the microphone for voice calls with your bots."
+        }
+      ],
+      "./plugins/with-share-extension",
+      [
+        "expo-sharing",
+        {
+          "ios": {
+            "enabled": true,
+            "appGroupId": "group.com.moonlight.app",
+            "activationRule": {
+              "supportsText": true,
+              "supportsWebUrlWithMaxCount": 1,
+              "supportsImageWithMaxCount": 10,
+              "supportsFileWithMaxCount": 10
+            }
+          },
+          "android": {
+            "enabled": true,
+            "singleShareMimeTypes": [
+              "text/*",
+              "image/*",
+              "audio/*",
+              "video/mp4",
+              "application/pdf",
+              "application/json",
+              "application/zip"
+            ],
+            "multipleShareMimeTypes": [
+              "image/*",
+              "audio/*",
+              "video/mp4",
+              "application/pdf",
+              "application/json",
+              "application/zip"
+            ]
+          }
+        }
+      ],
+      "./plugins/with-worklets-headers",
+      "./plugins/with-lan-cleartext",
+      "./plugins/with-android-no-gwp-asan",
+      "./plugins/with-agent-notifications",
+      "./plugins/with-app-intents",
+      "./plugins/with-apple-watch",
+      "expo-apple-authentication"
+    ],
+    "locales": {
+      "de": "./locales/de.json",
+      "es": "./locales/es.json",
+      "fr": "./locales/fr.json",
+      "he": "./locales/he.json",
+      "hi": "./locales/hi.json",
+      "ja": "./locales/ja.json",
+      "ko": "./locales/ko.json",
+      "nl": "./locales/nl.json",
+      "pl": "./locales/pl.json",
+      "pt-BR": "./locales/pt-BR.json",
+      "ru": "./locales/ru.json",
+      "th": "./locales/th.json",
+      "tr": "./locales/tr.json",
+      "zh-Hans": "./locales/zh-Hans.json",
+      "zh-Hant": "./locales/zh-Hant.json"
+    },
+    "ios": {
+      "bundleIdentifier": "com.moonlight.app",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "icon": "../../packages/ui-tokens/assets/Moonlight.icon",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "Moonlight uses the camera so you can attach photos to a bot message.",
+        "NSPhotoLibraryUsageDescription": "Moonlight uses your photo library so you can attach images to a bot message.",
+        "NSLocalNetworkUsageDescription": "Moonlight connects to a self-hosted Moonlight server on your local network.",
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        },
+        "UIBackgroundModes": ["voip", "audio", "remote-notification"],
+        "NSUserActivityTypes": ["INSendMessageIntent"]
+      },
+      "entitlements": {
+        "com.apple.developer.usernotifications.time-sensitive": true,
+        "com.apple.developer.usernotifications.communication": true
+      }
+    },
+    "android": {
+      "blockedPermissions": ["android.permission.READ_MEDIA_VISUAL_USER_SELECTED"],
+      "package": "com.moonlight.app",
+      "versionCode": 10,
+      "softwareKeyboardLayoutMode": "resize",
+      "icon": "./assets/icon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "monochromeImage": "./assets/monochrome-icon.png",
+        "backgroundImage": "./assets/icon-background.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "router": {},
+      "supportsRTL": true,
+      "eas": {
+        "projectId": "07f7eb04-45e3-47fe-9374-99a2f991131e",
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "MoonlightWatch",
+                  "bundleIdentifier": "com.moonlight.app.watchkitapp",
+                  "entitlements": {
+                    "com.apple.security.application-groups": ["group.com.moonlight.app"]
+                  }
+                },
+                {
+                  "targetName": "MoonlightWatchComplications",
+                  "bundleIdentifier": "com.moonlight.app.watchkitapp.complications",
+                  "entitlements": {
+                    "com.apple.security.application-groups": ["group.com.moonlight.app"]
+                  }
+                },
+                {
+                  "targetName": "MoonlightWidgets",
+                  "bundleIdentifier": "com.moonlight.app.widgets"
+                },
+                {
+                  "targetName": "expo-sharing-extension",
+                  "bundleIdentifier": "com.moonlight.app.expo-sharing-extension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": ["group.com.moonlight.app"]
+                  }
+                },
+                {
+                  "targetName": "AgentNotifications",
+                  "bundleIdentifier": "com.moonlight.app.notifications",
+                  "entitlements": {
+                    "com.apple.developer.usernotifications.communication": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/07f7eb04-45e3-47fe-9374-99a2f991131e"
+    }
+  }
+}

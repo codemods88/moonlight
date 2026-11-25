@@ -1,0 +1,9 @@
+# Optional drop-in: /etc/systemd/system/moonlight-backup.service.d/alerts.conf
+[Unit]
+OnFailure=moonlight-backup-alert.service
+
+[Service]
+ExecStartPost=-/usr/local/sbin/moonlight-host-alert backup-failure ""
+ReadWritePaths=/var/lib/moonlight/alerts
+StateDirectory=moonlight/alerts
+StateDirectoryMode=0700

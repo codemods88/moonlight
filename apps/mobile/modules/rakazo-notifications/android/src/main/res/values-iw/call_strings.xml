@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="moonlight_call_channel">שיחה פעילה</string>
+  <string name="moonlight_call_title">שיחת Moonlight</string>
+  <string name="moonlight_call_text">המיקרופון פעיל</string>
+  <string name="moonlight_call_answer">מענה</string>
+  <string name="moonlight_call_decline">דחייה</string>
+</resources>

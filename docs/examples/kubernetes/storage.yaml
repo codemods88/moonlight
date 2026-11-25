@@ -1,0 +1,45 @@
+# See ../../self-host-kubernetes.md before applying.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: moonlight-database
+  labels:
+    moonlight.example/phase: foundation
+  namespace: moonlight
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: moonlight-data
+  labels:
+    moonlight.example/phase: foundation
+  namespace: moonlight
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 30Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: moonlight-web-assets
+  labels:
+    moonlight.example/phase: foundation
+  namespace: moonlight
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi

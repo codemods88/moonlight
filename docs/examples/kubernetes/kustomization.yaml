@@ -1,0 +1,80 @@
+# See ../../self-host-kubernetes.md before applying.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespaces.yaml
+  - rbac.yaml
+  - storage.yaml
+  - postgres.yaml
+  - migrate.yaml
+  - bootstrap.yaml
+  - workloads.yaml
+  - limits.yaml
+  - network-policy.yaml
+  - sandbox-policy.yaml
+configMapGenerator:
+  - name: moonlight-config
+    namespace: moonlight
+    envs:
+      - config.env
+  - name: moonlight-installation
+    namespace: moonlight
+    envs:
+      - installation.env
+  - name: moonlight-migration-state
+    namespace: moonlight
+    envs:
+      - migration.env
+secretGenerator:
+  - name: moonlight-secrets
+    namespace: moonlight
+    envs:
+      - secrets.env
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    moonlight.example/phase: foundation
+replacements:
+  - source:
+      kind: ConfigMap
+      name: moonlight-installation
+      fieldPath: data.KUBERNETES_API_CIDR
+    targets:
+      - select:
+          kind: NetworkPolicy
+          name: moonlight-api
+        fieldPaths:
+          - spec.egress.5.to.0.ipBlock.cidr
+      - select:
+          kind: NetworkPolicy
+          name: moonlight-worker
+        fieldPaths:
+          - spec.egress.5.to.0.ipBlock.cidr
+  # Render the image boundary from the same setting as API/worker; no runtime
+  # admission parameter lookup or extra ConfigMap access is needed by the controller.
+  - source:
+      kind: ConfigMap
+      name: moonlight-config
+      fieldPath: data.KUBERNETES_SANDBOX_COMPUTER_IMAGE
+    targets:
+      - select:
+          kind: ValidatingAdmissionPolicy
+          name: moonlight-example-computers
+        fieldPaths:
+          - spec.validations.0.expression
+        options:
+          delimiter: "'"
+          index: 1
+  - source:
+      kind: ConfigMap
+      name: moonlight-installation
+      fieldPath: data.PREVIOUS_COMPUTER_IMAGE
+    targets:
+      - select:
+          kind: ValidatingAdmissionPolicy
+          name: moonlight-example-computers
+        fieldPaths:
+          - spec.validations.0.expression
+        options:
+          delimiter: "'"
+          index: 3

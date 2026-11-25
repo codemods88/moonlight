@@ -1,0 +1,11 @@
+{
+  "ios": {
+    "NSCameraUsageDescription": "Moonlight, bir bota gönderilen mesaja fotoğraf ekleyebilmeniz için kamerayı kullanır.",
+    "NSPhotoLibraryUsageDescription": "Moonlight, bir bota gönderilen mesaja görsel ekleyebilmeniz için fotoğraf arşivinizi kullanır.",
+    "NSPhotoLibraryAddUsageDescription": "Moonlight, Çıktılar'dan indirdiğiniz fotoğrafları ve videoları fotoğraf arşivinize kaydeder.",
+    "NSLocalNetworkUsageDescription": "Moonlight, yerel ağınızdaki kendi barındırdığınız Moonlight sunucusuna bağlanır.",
+    "NSMicrophoneUsageDescription": "Moonlight, botlarınızla sesli görüşmeler için mikrofonu kullanır.",
+    "NSSpeechRecognitionUsageDescription": "Moonlight, sesli görüşmeler sırasında konuşmanızı mesajlara dönüştürür.",
+    "NSFaceIDUsageDescription": "Moonlight'nun Face ID kullanmasına izin verin."
+  }
+}

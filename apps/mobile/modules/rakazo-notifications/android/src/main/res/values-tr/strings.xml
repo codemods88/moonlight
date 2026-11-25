@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="moonlight_channel_live">Canlı ajan durumu</string>
+  <string name="moonlight_channel_messages">Ajan mesajları</string>
+  <string name="moonlight_channel_scheduled">Zamanlanmış görevler</string>
+  <string name="moonlight_channel_attention">İlgi bekliyor</string>
+
+  <string name="moonlight_live_one">%1$s çalışıyor</string>
+  <string name="moonlight_live_many">%1$s ve %2$d kişi daha çalışıyor</string>
+  <string name="moonlight_live_working">Çalışıyor</string>
+
+  <string name="moonlight_scheduled_title">%1$s · Zamanlanmış görev</string>
+  <string name="moonlight_replied_group">%1$s, %2$s içinde yanıt verdi</string>
+  <string name="moonlight_replied">%1$s yanıt verdi</string>
+
+  <string name="moonlight_attention_failed">%1$s bir sorunla karşılaştı</string>
+  <string name="moonlight_attention_takeover">%1$s ekranda sana ihtiyaç duyuyor</string>
+  <string name="moonlight_attention_input">%1$s yanıtını bekliyor</string>
+</resources>

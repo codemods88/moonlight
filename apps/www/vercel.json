@@ -1,0 +1,104 @@
+{
+  "installCommand": "sh scripts/clone-marketing.sh && corepack pnpm install",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": { "eq": "www.moonlight.com" } }],
+      "destination": "https://moonlight.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": { "eq": "www.moonlight.com" } }],
+      "destination": "https://moonlight.com/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/x",
+      "destination": "https://x.com/moonlightbot",
+      "permanent": false
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://x.com/moonlightbot",
+      "permanent": false
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/codemods88/moonlight",
+      "permanent": false
+    },
+    {
+      "source": "/affiliates",
+      "destination": "https://partners.dub.co/inboxzero/moonlight",
+      "permanent": false
+    },
+    {
+      "source": "/supporter",
+      "destination": "https://buy.stripe.com/aFa8wQ4ACaY40Qr8rfcAo01",
+      "permanent": false
+    },
+    {
+      "source": "/priority-support",
+      "destination": "https://buy.stripe.com/4gM00kaZ08PW1Uv5f3cAo00",
+      "permanent": false
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/RWwKa2Sn7h",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/ai-catalog+json\""
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/ai-catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/ai-catalog+json"
+        }
+      ]
+    },
+    {
+      "source": "/:path(.+)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/index.md",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://moonlight.com/>; rel=\"canonical\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/ai-catalog+json\""
+        }
+      ]
+    },
+    {
+      "source": "/:path((?!index\\.md$|404\\.md$).+)\\.md",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://moonlight.com/:path/>; rel=\"canonical\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/ai-catalog+json\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[Default Applications]
+x-scheme-handler/http=moonlight-browser.desktop
+x-scheme-handler/https=moonlight-browser.desktop
+text/html=moonlight-browser.desktop
+x-scheme-handler/about=moonlight-browser.desktop
+x-scheme-handler/unknown=moonlight-browser.desktop

@@ -1,0 +1,18 @@
+# See ../../self-host-kubernetes.md before applying.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: moonlight
+  labels:
+    moonlight.example/phase: foundation
+    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/enforce-version: v1.35
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: moonlight-sandboxes
+  labels:
+    moonlight.example/phase: foundation
+    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/enforce-version: v1.35

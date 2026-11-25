@@ -1,0 +1,11 @@
+{
+  "ios": {
+    "NSCameraUsageDescription": "Moonlight usa la cámara para que puedas adjuntar fotos a un mensaje para un bot.",
+    "NSPhotoLibraryUsageDescription": "Moonlight usa tu fototeca para que puedas adjuntar imágenes a un mensaje para un bot.",
+    "NSPhotoLibraryAddUsageDescription": "Moonlight guarda en tu fototeca las fotos y los vídeos que descargas de Artefactos.",
+    "NSLocalNetworkUsageDescription": "Moonlight se conecta a un servidor de Moonlight autoalojado en tu red local.",
+    "NSMicrophoneUsageDescription": "Moonlight usa el micrófono para las llamadas de voz con tus bots.",
+    "NSSpeechRecognitionUsageDescription": "Moonlight convierte lo que dices en mensajes durante las llamadas de voz.",
+    "NSFaceIDUsageDescription": "Permite que Moonlight acceda a tus datos biométricos de Face ID."
+  }
+}

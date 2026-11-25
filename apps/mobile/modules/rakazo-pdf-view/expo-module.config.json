@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["MoonlightPdfViewModule"]
+  },
+  "android": {
+    "modules": ["com.moonlight.pdfview.MoonlightPdfViewModule"]
+  }
+}

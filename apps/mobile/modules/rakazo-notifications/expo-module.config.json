@@ -1,0 +1,10 @@
+{
+  "platforms": ["android", "apple"],
+  "android": {
+    "modules": ["com.moonlight.notifications.MoonlightNotificationsModule"]
+  },
+  "apple": {
+    "modules": ["MoonlightNotificationsModule"],
+    "appDelegateSubscribers": ["MoonlightCallsSubscriber"]
+  }
+}

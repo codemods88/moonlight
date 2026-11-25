@@ -1,0 +1,11 @@
+{
+  "ios": {
+    "NSCameraUsageDescription": "Moonlight משתמשת במצלמה כדי שתוכלו לצרף תמונות להודעה לבוט.",
+    "NSPhotoLibraryUsageDescription": "Moonlight משתמשת בספריית התמונות שלכם כדי שתוכלו לצרף תמונות להודעה לבוט.",
+    "NSPhotoLibraryAddUsageDescription": "Moonlight שומרת בספריית התמונות שלכם תמונות וסרטונים שהורדתם מהתוצרים.",
+    "NSLocalNetworkUsageDescription": "Moonlight מתחברת לשרת Moonlight באירוח עצמי ברשת המקומית שלכם.",
+    "NSMicrophoneUsageDescription": "Moonlight משתמשת במיקרופון לשיחות קוליות עם הבוטים שלכם.",
+    "NSSpeechRecognitionUsageDescription": "Moonlight הופכת את הדיבור שלכם להודעות במהלך שיחות קוליות.",
+    "NSFaceIDUsageDescription": "אפשרו ל-Moonlight להשתמש ב-Face ID."
+  }
+}

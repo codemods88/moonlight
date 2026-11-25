@@ -1,0 +1,11 @@
+{
+  "ios": {
+    "NSCameraUsageDescription": "Moonlight はボットへのメッセージに写真を添付するためにカメラを使用します。",
+    "NSPhotoLibraryUsageDescription": "Moonlight はボットへのメッセージに画像を添付するために写真ライブラリを使用します。",
+    "NSPhotoLibraryAddUsageDescription": "Moonlight は成果物からダウンロードした写真やビデオを写真ライブラリに保存します。",
+    "NSLocalNetworkUsageDescription": "Moonlight はローカルネットワーク上のセルフホストの Moonlight サーバーに接続します。",
+    "NSMicrophoneUsageDescription": "Moonlight はボットとの音声通話にマイクを使用します。",
+    "NSSpeechRecognitionUsageDescription": "Moonlight は音声通話中にあなたの話した内容をメッセージに変換します。",
+    "NSFaceIDUsageDescription": "Moonlight に Face ID の使用を許可します。"
+  }
+}

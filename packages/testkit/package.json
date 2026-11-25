@@ -1,0 +1,39 @@
+{
+  "name": "@moonlight/testkit",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check": "tsrs --noEmit -p tsconfig.json",
+    "test": "vitest run --root ../.. packages/testkit/src"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.6",
+    "@lingui/core": "6.12.0",
+    "@lingui/message-utils": "6.12.0",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@moonlight/adapter-kit": "workspace:*",
+    "@moonlight/adapters": "workspace:*",
+    "@moonlight/contracts": "workspace:*",
+    "@moonlight/core": "workspace:*",
+    "@moonlight/db": "workspace:*",
+    "@moonlight/logging": "workspace:*",
+    "@moonlight/page-kit": "workspace:*",
+    "@testcontainers/postgresql": "12.2.1",
+    "fflate": "0.8.3",
+    "pngjs": "7.0.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "3.1164.0",
+    "@playwright/test": "1.64.1",
+    "@moonlight/api": "workspace:*",
+    "@moonlight/sandbox-supervisor": "workspace:*",
+    "@types/pngjs": "6.0.5",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  }
+}
